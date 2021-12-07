@@ -7,18 +7,28 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-
-## The Code
-
+# The Setup
 
 ```{r}
+library(tidyverse)
+library(fivethirtyeight)
+library(dplyr)
+library(lubridate)
+```
+
+# The Code
+
+```{r}
+pres_2016_trail
+
 weekly_campaign_stops <- pres_2016_trail %>% 
-  mutate(week = floor_date(date, unit = "week")) %>% 
+  mutate(week = floor_date(date, unit = "week")) %>%
   group_by(candidate, week) %>% 
   summarize(number_of_stops = n())
 ```
 
-## The Visualization
+
+# The Visualization
 
 
 ```{r pressure, echo=FALSE}
