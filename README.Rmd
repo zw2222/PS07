@@ -1,0 +1,27 @@
+---
+title: "Hilliary vs. Trump: Number of Campaign Stops"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## The Code
+
+
+```{r}
+weekly_campaign_stops <- pres_2016_trail %>% 
+  mutate(week = floor_date(date, unit = "week")) %>% 
+  group_by(candidate, week) %>% 
+  summarize(number_of_stops = n())
+```
+
+## The Visualization
+
+
+```{r pressure, echo=FALSE}
+ggplot(data = weekly_campaign_stops, mapping = aes(x = candidate, y = number_of_stops)) + geom_col() + labs(x = "Candidate", y = "Number of Stops")
+```
+
