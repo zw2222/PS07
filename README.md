@@ -72,4 +72,4 @@ weekly_campaign_stops <- pres_2016_trail %>%
 
 # The Visualization
 
-![](README_files/figure-gfm/pressure-1.png)<!-- -->
+![](PS07/README_files/figure-gfm/pressure-1.png)<!-- -->
