@@ -72,4 +72,8 @@ weekly_campaign_stops <- pres_2016_trail %>%
 
 # The Visualization
 
+```{r pressure, echo=FALSE}
+ggplot(data = weekly_campaign_stops, mapping = aes(x = candidate, y = number_of_stops)) + geom_col() + labs(x = "Candidate", y = "Number of Stops")
+```
+
 ![](README_files/figure-gfm/pressure-1.png)<!-- -->
